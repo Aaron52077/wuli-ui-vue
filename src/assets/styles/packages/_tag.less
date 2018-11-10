@@ -1,0 +1,92 @@
+@import '../common/_var';
+@import '../common/_mixins';
+
+.wuli-tag {
+    display: inline-block;
+    height: 24px;
+    line-height: 22px;
+    margin: 2px 4px 2px 0;
+    padding: 0 8px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    background: #f8f8f8;
+    font-size: 12px;
+    vertical-align: middle;
+    opacity: 1;
+    overflow: hidden;
+    color:#666;
+    &__success{
+        color:#fff;
+        border:none;
+        background-color: @--color-success;
+    }
+    &__info{
+        color:#fff;
+        border:none;
+        background-color: @--color-info;
+    }
+    &__warning{
+        color:#fff;
+        border:none;
+        background-color: @--color-warning;
+    }
+    &__danger{
+        color:#fff;
+        border:none;
+        background-color: @--color-danger;
+    }
+    &__primary{
+        color:#fff;
+        border:none;
+        background-color: @--color-primary;
+    }
+    &__custom{
+        color:#fff;
+        border:none;
+    }
+    &__round{
+        border-radius: 1em;
+    }
+    &__border{
+        &--danger{
+            color:@--color-danger;
+            border:1px solid rgba(245,108,108,.3);
+            background-color: rgba(245,108,108,.1);
+        }
+        &--primary{
+            color:@--color-primary;
+            border:1px solid rgba(64,158,255,.3);
+            background-color: rgba(64,158,255,.1);
+        }
+        &--success{
+            color:@--color-success;
+            border:1px solid rgba(103,194,58,.3);
+            background-color: rgba(103,194,58,.1);
+        }
+        &--info{
+            color:@--color-info;
+            border:1px solid rgba(153,153,153,.3);
+            background-color: rgba(153,153,153,.1);
+        }
+        &--warning{
+            color:@--color-warning;
+            border:1px solid rgba(230,162,60,.3);
+            background-color: rgba(230,162,60,.1);
+        }
+    }
+    &__icon{
+        font-size: 14px;
+        position: relative;
+        left:4px;
+    }
+    &__size{
+        &--medium{
+            height:28px;
+            line-height: 28px;
+        }
+        &--small{
+            height:20px;
+            line-height: 20px;
+        }
+    }
+}

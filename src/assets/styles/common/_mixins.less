@@ -1,0 +1,186 @@
+/* less 文件 (移动端通用less文件)
+* 作者 Aaron
+* 针对小程序开发
+* @charset "utf-8";
+*/
+
+.clearfix() {
+    zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+        line-height: 0;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.fl() {
+    float: left;
+}
+
+.fr() {
+    float: right;
+}
+
+// 单行文字溢出隐藏显示省略号，需要用在与文字最近的一个block|inline-block的祖先元素上(ie6中该元素的width需要显性的声明且不能为auto,100%是可行的) 
+.text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 多行文字隐藏显示省略号......
+.text-hide(@row: 2) {
+    display: -webkit-box; // 作为弹性伸缩盒子模型显示
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical; // 设置伸缩盒子的子元素排列方式--从上到下垂直排列
+    -webkit-line-clamp: @row; // 显示的行,默认为2
+}
+
+// 图片裁剪
+.image-cover() {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// 渐变
+.linear-gradient(@direction: top; @a: #ffa600; @b: #fe9200) {
+    background-image: -webkit-linear-gradient(@direction, @a, @b);
+    background-image: linear-gradient(to @direction, @a, @b);
+}
+
+// 利用边框制作小三角
+.triangle(@type: bottom, @x: 10px, @c: #999, @y: @x) {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    vertical-align: middle; // 这里有意利用IE6对dashed渲染缺陷解决IE6不支持transparent的问题 
+    @transparent: @y dashed transparent; // 该特殊边框的大小必须小于其他边框大小的四倍，否则IE6会有问题 
+    @special: @x solid @c;
+    .border();
+    .border() when (@type =bottom) {
+        border-bottom: @special;
+        border-left: @transparent;
+        border-right: @transparent;
+    }
+    .border() when (@type =top) {
+        border-top: @special;
+        border-left: @transparent;
+        border-right: @transparent;
+    }
+    .border() when (@type =left) {
+        border-left: @special;
+        border-top: @transparent;
+        border-bottom: @transparent;
+    }
+    .border() when (@type =right) {
+        border-right: @special;
+        border-top: @transparent;
+        border-bottom: @transparent;
+    }
+}
+
+// 鼠标经过旋转
+.rotate(@d: 180deg, @s: .3s) {
+    -webkit-transition: @s ease-in;
+    transition: @s ease-in;
+    &:hover,
+    &-hover {
+        -webkit-transform: rotate(@d);
+        transform: rotate(@d);
+    }
+}
+
+// 去色(不兼容低版本Safari、Opera和某些firefox), 一般用于哀悼日)
+.grayscale() {
+    -webkit-filter: grayscale(100%);
+    -webkit-filter: grayscale(1);
+    /* Chrome 19+ & Safari 6+ */
+    filter: grayscale(100%);
+}
+
+// CSS3 "栅格化"(flexbox)
+.display-flex(@pos: row) {
+    display: -webkit-box;
+    /* IE 10 */
+    display: flex;
+    flex-direction: @pos;
+}
+
+.box-flex(@a) {
+    -webkit-flex: @a;
+    flex: @a;
+}
+
+// 自定义less 混合函数
+// 圆角
+.border-radius(@a: 3px) {
+    -webkit-border-radius: @a;
+    border-radius: @a;
+}
+
+//变形
+.transform(@all, @s: center) {
+    -webkit-transform: @all;
+    transform: @all;
+    -webkit-transform-origin: @s;
+    transform-origin: @s;
+}
+
+//过渡
+.transition(@all) {
+    -webkit-transition: @all;
+    transition: @all;
+}
+
+//常用过渡
+.transiton() {
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+//动画 可以自定义修改
+.animation(@all) {
+    -webkit-animation: @all;
+    animation: @all;
+}
+
+//常用动画
+.animaton(@name) {
+    -webkit-animation: @name 1s 0s 1 ease both;
+    animation: @name 1s 0s 1 ease both;
+}
+
+//盒子阴影
+.box-shadow(@a: 0 0 10px rgba(0, 0, 0, .25)) {
+    -webkit-box-shadow: @a;
+    box-shadow: @a;
+}
+
+//文字旋转
+.text-rotate(@angle: 45deg) {
+    -webkit-transform: rotate(@angle);
+    transform: rotate(@angle);
+}
+
+// 为表单控件中每个文本域提供占位符（Placeholder）文本的颜色
+.placeholder(@color: @input-color-placeholder) {
+    // Firefox
+    &::-moz-placeholder {
+        color: @color;
+    } 
+    // Internet Explorer 10+
+    &:-ms-input-placeholder {
+        color: @color;
+    } 
+    // Safari and Chrome
+    &::-webkit-input-placeholder {
+        color: @color;
+    } 
+}
