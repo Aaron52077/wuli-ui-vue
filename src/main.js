@@ -6,6 +6,9 @@ import axios from 'axios'
 import router from './router'
 import store from './store'
 
+// fonts
+import './assets/fonts'
+
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
 

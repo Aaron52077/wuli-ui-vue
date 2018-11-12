@@ -5,21 +5,21 @@
         <div class="wuli-panel__title">普通按钮</div>
         <div class="wuli-panel">
             <div class="wuli-btns">
-                <wp-button type="normal" @click="clickHandle">默认按钮</wp-button>
-                <wp-button type="primary">主要按钮</wp-button>
-                <wp-button type="success">成功按钮</wp-button>
-                <wp-button type="info">信息按钮</wp-button>
-                <wp-button type="danger">危险按钮</wp-button>
-                <wp-button type="warn">警告按钮</wp-button>
+                <wp-button type="normal" block @click="clickHandle">默认按钮</wp-button>
+                <wp-button type="primary" block>主要按钮</wp-button>
+                <wp-button type="success" block>成功按钮</wp-button>
+                <wp-button type="info" block>信息按钮</wp-button>
+                <wp-button type="danger" block>危险按钮</wp-button>
+                <wp-button type="warn" block>警告按钮</wp-button>
             </div>
         </div>
 
         <div class="wuli-panel__title">大号按钮，没有边框线及圆角</div>
         <div class="wuli-panel">
-            <wp-button type="normal" size="large">默认按钮</wp-button>
-            <wp-button type="primary" size="large" >主要按钮</wp-button>
-            <wp-button type="warn" size="large">警告按钮</wp-button>
-            <wp-button type="danger" size="large">危险按钮</wp-button>
+            <wp-button type="normal" block size="large">默认按钮</wp-button>
+            <wp-button type="primary" block size="large" >主要按钮</wp-button>
+            <wp-button type="warn" block size="large">警告按钮</wp-button>
+            <wp-button type="danger" block size="large">危险按钮</wp-button>
         </div>
 
         <div class="wuli-panel__title">小号按钮</div>
@@ -43,20 +43,20 @@
         <div class="wuli-panel__title">Loading</div>
         <div class="wuli-panel">
             <div class="wuli-btns">
-                <wp-button type="normal" loading>默认按钮</wp-button>
-                <wp-button type="primary" loading>主要按钮</wp-button>
-                <wp-button type="danger" loading>危险按钮</wp-button>
-                <wp-button type="warn" loading>警告按钮</wp-button>
+                <wp-button type="normal" block loading>默认按钮</wp-button>
+                <wp-button type="primary" block loading>主要按钮</wp-button>
+                <wp-button type="danger" block loading>危险按钮</wp-button>
+                <wp-button type="warn" block loading>警告按钮</wp-button>
             </div>
         </div>
 
         <div class="wuli-panel__title">Disabled</div>
         <div class="wuli-panel">
             <div class="wuli-btns">
-                <wp-button type="normal" disabled>默认按钮</wp-button>
-                <wp-button type="primary" disabled>默认按钮</wp-button>
-                <wp-button type="danger" disabled>默认按钮</wp-button>
-                <wp-button type="warn" disabled>默认按钮</wp-button>
+                <wp-button type="normal" block disabled>默认按钮</wp-button>
+                <wp-button type="primary" block disabled>默认按钮</wp-button>
+                <wp-button type="danger" block disabled>默认按钮</wp-button>
+                <wp-button type="warn" block disabled>默认按钮</wp-button>
             </div>
         </div>
     </div>

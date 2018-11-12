@@ -1,8 +1,8 @@
 <template>
     <div class="wuli-cell" :class="{'wuli-cell__access': isLink}">
-        <view class="wuli-cell__hd" v-if="icon">
-            <i class="iconfont" :class="icon"></i>
-        </view>
+        <div class="wuli-cell__hd" v-if="icon">
+            <wp-icon :icon-class="icon"></wp-icon>
+        </div>
         <div class="wuli-cell__bd" @click="clickHandle">
             <slot name="title">
                 <div class="wuli-cell__text" v-text="title"></div>
@@ -11,7 +11,7 @@
         </div>
         <div class="wuli-cell__ft" v-if="value || isLink">
             <slot name="right">
-                <div v-text="value"></div>
+                <span v-text="value"></span>
             </slot>
         </div>
     </div>
@@ -36,6 +36,8 @@
  *   <div slot="value">描述文字啊哈</div>
  * </wp-cell>
  */
+import wpIcon from '../icon'
+
 export default {
     props: {
         icon: String,
@@ -50,6 +52,9 @@ export default {
                 this.$emit('click', e)
             }
         }
+    },
+    components: {
+        wpIcon
     }
 }
 </script>

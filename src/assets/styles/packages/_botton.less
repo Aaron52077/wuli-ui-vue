@@ -14,7 +14,9 @@
     box-sizing: border-box;
     text-decoration: none;
     text-align: center;
-    vertical-align: middle;
+    &:not(.is-disabled):active:after {
+        background: rgba(255, 255, 255, .2);
+    }
     &::after {
         content: '';
         position: absolute;
@@ -93,9 +95,11 @@
     &__large {
         border-radius: 0;
         margin-bottom: 0;
-        border: none;
         line-height: 50px;
         height: 50px;
+    }
+    &.is-block {
+        width: 100%;
     }
     &.is-loading {
         color: transparent;
@@ -142,10 +146,6 @@
 
 .wuli-btns {
     margin: 15px;
-}
-
-.button-hover {
-    opacity: .9;
 }
 
 .wuli-btn__success.is-loading::before, 

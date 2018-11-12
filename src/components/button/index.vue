@@ -9,7 +9,8 @@
                 'is-loading': loading, 
                 'is-disabled': disabled,
                 'is-round': round,
-                'is-circle': circle
+                'is-circle': circle,
+                'is-block': block
             }
         ]" 
         :plain="plain" 
@@ -33,6 +34,7 @@
  * @param {boolean} [loading] - 是否加载中状态
  * @param {boolean} [round] - 是否圆角按钮
  * @param {boolean} [circle] - 是否圆形按钮
+ * @param {boolean} [block] - 是否整行显示
  * @example
  * <wp-button type="normal" size="large">默认按钮</wp-button>
  */
@@ -51,7 +53,8 @@ export default {
         styles: String,
         loading: Boolean,
         round: Boolean,
-        circle: Boolean
+        circle: Boolean,
+        block: Boolean
     },
     computed: {
         buttonClass() {
