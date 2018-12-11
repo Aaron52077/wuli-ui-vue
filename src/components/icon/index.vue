@@ -14,6 +14,7 @@
  * @example
  */
 export default {
+    name: 'wp-icon',
     props: {
         iconClass: String,
         className: String
@@ -24,7 +25,7 @@ export default {
         },
         svgClass() {
             if (this.className) {
-                return 'wp-icons' + this.className
+                return 'wp-icons ' + this.className
             } else {
                 return 'wp-icons'
             }

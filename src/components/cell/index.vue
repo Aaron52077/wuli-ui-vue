@@ -36,9 +36,9 @@
  *   <div slot="value">描述文字啊哈</div>
  * </wp-cell>
  */
-import wpIcon from '../icon'
 
 export default {
+    name: 'wp-cell',
     props: {
         icon: String,
         title: String,
@@ -52,9 +52,6 @@ export default {
                 this.$emit('click', e)
             }
         }
-    },
-    components: {
-        wpIcon
     }
 }
 </script>

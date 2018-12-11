@@ -3,8 +3,6 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-
-
 export const routes = [
     {
         path: '/dashboard',
@@ -27,17 +25,17 @@ export const routes = [
         component: resolve => require(['@/views/tag'], resolve)
     },
     {
-        path: '/switch',
-        component: resolve => require(['@/views/switch'], resolve)
+        path: '/photo',
+        component: resolve => require(['@/views/photoPreview'], resolve)
     },
     {
         path: '/popup',
         component: resolve => require(['@/views/popup'], resolve)
     },
     {
-        path: '/action',
-        component: resolve => require(['@/views/action'], resolve)
-    }
+        path: '/swiper',
+        component: resolve => require(['@/views/swiperPreview'], resolve)
+    },
 ]
 
 export default new Router({

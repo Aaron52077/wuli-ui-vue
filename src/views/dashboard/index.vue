@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div v-if="selected === '1'">
-            <div class="doc-title wuli-hairline__bottom">wuli mpVue</div>
+            <div class="doc-title wuli-hairline__bottom">wuli-ui 组件库</div>
             <div v-for="(group, index) of list" :key="index">
                 <div class="wuli-panel__title">{{ group.title }}</div>
                 <div class="wuli-panel">
@@ -49,8 +49,6 @@
 
 <script>
 import components from './config'
-import wpButton from '@/components/button'
-import wpCell from '@/components/cell'
 import wpTabbar from '@/components/tabbar'
 import wpTabbarItem from '@/components/tabbar/item'
 import { getMock } from '@/api'
@@ -70,12 +68,7 @@ export default {
             })
         }
     },
-    components: {
-        wpTabbar, 
-        wpTabbarItem,
-        wpButton,
-        wpCell
-    },
+    components: { wpTabbar, wpTabbarItem },
     watch: {
         selected: {
             handler: function(val, oldVal) { 

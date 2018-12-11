@@ -1,5 +1,13 @@
 <template>
-    <div class="container">
+    <div class="container wuli-page">
+        <wp-header title="BUTTON" fixed>
+            <template slot="left">
+                <wp-icon iconClass="back" className="wuli-header__hd" @click.native="$router.go(-1)"></wp-icon>
+            </template>
+            <template slot="right">
+                <wp-icon iconClass="help" className="wuli-header__ft"></wp-icon>
+            </template>
+        </wp-header>
         <div class="doc-title wuli-hairline__bottom">CELL</div>
         <div class="doc-description">单元格</div>
         <div class="wuli-panel">
@@ -19,8 +27,6 @@
 </template>
 
 <script>
-import wpCell from '@/components/cell'
-
 export default {
     data() {
         return {
@@ -31,9 +37,6 @@ export default {
         tap() {
             
         }
-    },
-    components: {
-        wpCell
     }
 }
 </script>

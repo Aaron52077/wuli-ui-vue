@@ -3,7 +3,7 @@
         :class="[
             visible ? 'wuli-popup__show' : '',
             position ? 'wuli-popup__' + position : '',
-            style ? style : '' ]" @touchmove.stop.prevent>
+            styles ? styles : '' ]" @touchmove.stop.prevent>
         <template v-if="modal && closeOnClickModal">
             <div class="wuli-popup__mask" @click.stop="close"></div>
         </template>
@@ -29,6 +29,7 @@
  *  <wp-popup v-model="visible"></wp-popup>
  */
 export default {
+    name: 'wp-popup',
     props: {
         modal: {
             type: Boolean,
@@ -40,7 +41,7 @@ export default {
         },
         position: String,
         value: Boolean,
-        style: String
+        styles: String
     },
     data() {
         return {

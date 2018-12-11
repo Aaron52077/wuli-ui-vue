@@ -1,28 +1,35 @@
 <template>
     <div class="wuli-switch" 
-        :class="[checked ?'wuli-switch__on':'wuli-switch__off']" 
-        @click="click">
-        <div class="wuli-switch__word" v-if="type">{{ type == 1 ? 'on' : '开' }}</div>
+        :class="[ currentValue ? 'wuli-switch__on' : 'wuli-switch__off' ]" 
+        @click="$emit('change', currentValue)">
         <div class="wuli-switch__circle"></div>
-        <div class="wuli-switch__bg"><span v-if="type">{{ type == 1 ? 'off' : '关' }}</span></div>
+        <div class="wuli-switch__bg"></div>
     </div>
 </template>
 
 <script>
 export default {
+    name: 'wp-switch',
     props:{
         checked: Boolean,
-        type: Number
+        disabled: {
+            type: Boolean,
+            default: false
+        }
     },
     data() {
         return {
 
         }
     },
-    methods: {
-        click() {
-            this.checked = !this.checked
-            this.$emit('change',this.checked)
+    computed: {
+        currentValue: {
+            get() {
+                return this.checked
+            },
+            set(val) {
+                this.$emit('input', val)
+            }
         }
     }
 }

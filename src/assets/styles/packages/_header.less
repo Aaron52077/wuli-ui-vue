@@ -1,0 +1,34 @@
+@import '../common/_var';
+@import '../common/_mixins';
+
+.wuli-header {
+    position: relative;
+    .display-flex();
+    align-items: center;
+    padding: 0 10px;
+    height: 48px;
+    text-align: center;
+    background: @--color-white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .05);
+    &__hd {
+        font-size: @--size-base + 8;
+        color: @--color-info;
+    }
+    &__bd {
+        .box-flex(1);
+        font-weight: normal;
+        font-size: @--size-base;
+        .text-overflow();
+    }
+    &__ft {
+        font-size: @--size-base + 4;
+        color: @--color-info;
+    }
+    &.is-fixed {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 9;
+    }
+}

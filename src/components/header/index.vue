@@ -1,15 +1,15 @@
 <template>
-  <header
-    class="mint-header"
-    :class="{ 'is-fixed': fixed }">
-    <div class="mint-header-button is-left">
-      <slot name="left"></slot>
-    </div>
-    <h1 class="mint-header-title" v-text="title"></h1>
-    <div class="mint-header-button is-right">
-      <slot name="right"></slot>
-    </div>
-  </header>
+    <header
+        class="wuli-header"
+        :class="{ 'is-fixed': fixed }">
+        <div class="wuli-header__hd" @click="back($event)">
+            <slot name="left"></slot>
+        </div>
+        <h1 class="wuli-header__bd" v-text="title"></h1>
+        <div class="wuli-header__ft">
+            <slot name="right"></slot>
+        </div>
+    </header>
 </template>
 
 <script>
@@ -29,10 +29,15 @@
  * </mt-header>
  */
 export default {
-  name: 'mt-header',
-  props: {
-    fixed: Boolean,
-    title: String
-  }
+    name: 'wp-header',
+    props: {
+        fixed: Boolean,
+        title: String
+    },
+    methods: {
+        back(e) {
+            this.$emit('click', e);
+        }
+    }
 }
 </script>

@@ -2,7 +2,7 @@
     <div class="wuli-actionsheet" :class="[visible ? 'wuli-actionsheet__show' : '']">
         <div class="wuli-actionsheet__mask"></div>
         <div class="wuli-actionsheet__container">
-            <solt></solt>
+            <slot></slot>
             <!-- 关闭按钮 -->
             <div class="wuli-actionsheet__footer">
                 <button class="wuli-actionsheet__btn wuli-btn" @cilik="close">关闭</button>
@@ -25,6 +25,7 @@
  */
 
 export default {
+    name: 'wp-action',
     props: {
         closeOnClickModal: Boolean,
         value: Boolean
@@ -56,7 +57,4 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-
-</style>
 

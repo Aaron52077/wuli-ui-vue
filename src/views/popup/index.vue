@@ -1,16 +1,19 @@
 <template>
-    <div class="container">
+    <div class="container wuli-page">
+        <wp-header title="POPUP" fixed>
+            <template slot="left">
+                <wp-icon iconClass="back" className="wuli-header__hd" @click.native="$router.go(-1)"></wp-icon>
+            </template>
+        </wp-header>
         <div class="doc-title wuli-hairline__bottom">POPUP</div>
         <div class="doc-description">弹出层</div>
         <div class="wuli-panel__title">位置</div>
-        <div class="wuli-panel">
-            <div class="wuli-btns">
-                <wp-button type="normal" @click="togglePopup">默认弹出层</wp-button>
-                <wp-button type="primary" @click="toggleTopPopup">顶部弹出</wp-button>
-                <wp-button type="success" @click="toggleBottomPopup">底部弹出</wp-button>
-                <wp-button type="info" @click="toggleLeftPopup">左边弹出</wp-button>
-                <wp-button type="warn" @click="toggleRightPopup">右边弹出</wp-button>
-            </div>
+        <div class="wuli-panel wuli-panel__bd">
+            <wp-button type="normal" block @click="togglePopup">默认弹出层</wp-button>
+            <wp-button type="primary" block @click="toggleTopPopup">顶部弹出</wp-button>
+            <wp-button type="success" block @click="toggleBottomPopup">底部弹出</wp-button>
+            <wp-button type="info" block @click="toggleLeftPopup">左边弹出</wp-button>
+            <wp-button type="warn" block @click="toggleRightPopup">右边弹出</wp-button>
         </div>
 
         <wp-popup v-model="popupVisible" :closeOnClickModal="false">
@@ -32,9 +35,6 @@
 </template>
 
 <script>
-import wpPopup from '@/components/popup'
-import wpButton from '@/components/button'
-
 export default {
     data() {
         return {
@@ -44,9 +44,6 @@ export default {
             topPopupVisible: false,
             bottomPopupVisible: false
         }
-    },
-    onShow() {
-       
     },
     methods: {
         togglePopup() {
@@ -64,7 +61,6 @@ export default {
         toggleTopPopup() {
             this.topPopupVisible = !this.topPopupVisible
         }
-    },
-    components: { wpPopup, wpButton }
+    }
 }
 </script>

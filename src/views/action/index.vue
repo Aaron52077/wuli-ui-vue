@@ -1,5 +1,10 @@
 <template>
-    <div class="container">
+    <div class="container wuli-page">
+        <wp-header title="ACTIONSHEET" fixed>
+            <template slot="left">
+                <wp-icon iconClass="back" className="wuli-header__hd" @click.native="$router.go(-1)"></wp-icon>
+            </template>
+        </wp-header>
         <div class="doc-title wuli-hairline__bottom">ACTIONSHEET</div>
         <div class="doc-description">行动按钮</div>
         <div class="wuli-panel__title">上拉菜单</div>
@@ -16,8 +21,6 @@
 </template>
 
 <script>
-import wpAction from '@/components/action'
-import wpButton from '@/components/button'
 
 export default {
     data() {
@@ -29,7 +32,6 @@ export default {
         togglePopup() {
             this.popupVisible = !this.popupVisible
         }
-    },
-    components: { wpAction, wpButton }
+    }
 }
 </script>

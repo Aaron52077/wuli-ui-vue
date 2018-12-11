@@ -2,14 +2,19 @@
     <div class="wuli-tag" 
         :class="[
             type ? 'wuli-tag__' + type : '',
-            color ? 'wuli-tag__custom' : '',
-            round ? 'wuli-tag__round':'',
-            border ? 'wuli-tag__border--' + border: '',
-            size?'wuli-tag__size--'+size:'']" 
-        :style="[color ? 'background-color:' + color : '' ]"
-        @click="click">
+            border ? 'wuli-tag__border--' + border : '',
+            size ? 'wuli-tag__size--' + size : '',
+            {
+                'is-round': round,
+                'is-edit': closable
+            }
+        ]"
+        @click.stop="click">
         <slot></slot>
-        <i class="wuliFonts icon-cha-copy wuli-tag__icon" v-if="closable"></i>
+        <wp-icon iconClass="wrong" v-if="closable"></wp-icon>
+        <slot name="right">  
+            <div class="wuli-tag__icon" @click="handle"></div>
+        </slot>
     </div>
 </template>
 
@@ -30,6 +35,9 @@ export default {
     },
     methods: {
         click(e) {
+            this.$emit('click', e)
+        },
+        handle(e) {
             this.$emit('click', e)
         }
     }

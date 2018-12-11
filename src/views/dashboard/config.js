@@ -13,10 +13,6 @@ export default {
             {
                 name: 'Tag 标签',
                 path: '/tag'
-            },
-            {
-                name: 'Switch 开关',
-                path: '/switch'
             }
         ]
     },
@@ -26,10 +22,27 @@ export default {
             {
                 name: 'Popup 弹出层',
                 path: '/popup'
+            }
+        ]
+    },
+    expand: {
+        title: '第三方组件',
+        content: [
+            {
+                name: 'vue-photo-preview',
+                path: '/photo'
             },
             {
-                name: 'Action 上拉菜单',
-                path: '/action'
+                name: 'vue-awesome-swiper',
+                path: '/swiper'
+            },
+            {
+                name: 'better-scroll',
+                path: '/scroll'
+            },
+            {
+                name: 'vue-qart',
+                path: '/qart'
             }
         ]
     }

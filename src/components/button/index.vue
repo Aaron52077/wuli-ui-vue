@@ -39,6 +39,7 @@
  * <wp-button type="normal" size="large">默认按钮</wp-button>
  */
 export default {
+    name: 'wp-button',
     props: {
         type: {
             type: String,

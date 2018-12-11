@@ -1,5 +1,13 @@
 <template>
-    <div class="container">
+    <div class="container wuli-page">
+        <wp-header title="BUTTON" fixed>
+            <template slot="left">
+                <wp-icon iconClass="back" className="wuli-header__hd" @click.native="$router.go(-1)"></wp-icon>
+            </template>
+            <template slot="right">
+                <wp-icon iconClass="category" className="wuli-header__ft"></wp-icon>
+            </template>
+        </wp-header>
         <div class="doc-title wuli-hairline__bottom">BUTTON</div>
         <div class="doc-description">按钮</div>
         <div class="wuli-panel__title">普通按钮</div>
@@ -63,7 +71,6 @@
 </template>
 
 <script>
-import wpButton from '@/components/button'
 
 export default {
     data() {
@@ -71,19 +78,10 @@ export default {
             
         }
     },
-    onShow() {
-       
-    },
     methods: {
-        clickHandle() {
-            
-        },
-        getuserinfo(e) {
-
+        clickHandle(e) {
+            this.$emit('click', e)
         }
-    },
-    components: {
-        wpButton
     }
 }
 </script>
