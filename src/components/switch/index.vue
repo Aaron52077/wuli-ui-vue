@@ -10,6 +10,10 @@
 <script>
 export default {
     name: 'wp-switch',
+    model: {
+        prop: 'checked',
+        event: 'change'
+    },
     props:{
         checked: Boolean,
         disabled: {
@@ -28,7 +32,7 @@ export default {
                 return this.checked
             },
             set(val) {
-                this.$emit('input', val)
+                this.$emit('change', val)
             }
         }
     }

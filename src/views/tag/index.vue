@@ -39,8 +39,8 @@
         <div class="wuli-panel wuli-panel__bd">
             <wp-tag :border="p.type" v-for="(p, index) of tagsList" :key="index">
                 标签{{index + 1}}
-                 <template slot="right">
-                     <wp-icon iconClass="moreunfold" @click.native="editHandle(index)"></wp-icon>
+                <template slot="right">
+                    <wp-icon iconClass="moreunfold" @click.native="editHandle(index)"></wp-icon>
                 </template>
             </wp-tag>
         </div>
