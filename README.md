@@ -1,13 +1,15 @@
 # wuli-ui-vue
 `wuli-ui-vue`是基于 [wuli-ui](https://github.com/Aaron52077/wuli-ui) 的轻量级移动UI组件，保留了 [wuli-ui](https://github.com/Aaron52077/wuli-ui) 的视觉规范，旨在提高学习实战项目中的应用，同时方便开发者更加便捷的进行编程（ps：up主搬砖中...文档会陆续更新的）。
 
-?> `wuli-ui-vue` 中组件通常都是以 `<wp-###>` 开头。
+`wuli-ui-vue` 中组件通常都是以 `<wp-###>` 开头。
 
 ## 文档
 
 [wuli-ui-vue 文档](https://aaron52077.github.io/wuli-ui-vue/) 
 
-<div align = right>文档更新时间： {docsify-updated}</div>
+## 演示demo
+
+[DEMO](https://aaron52077.github.io/wuli-ui-dev/#/) 
 
 > 开发预览
 
