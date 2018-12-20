@@ -36,6 +36,10 @@ export const routes = [
         path: '/swiper',
         component: resolve => require(['@/views/swiperPreview'], resolve)
     },
+    {
+        path: '/scroll',
+        component: resolve => require(['@/views/bScroll'], resolve)
+    },
 ]
 
 export default new Router({

@@ -16,3 +16,9 @@ export function getImages() {
     let res = request('/images', 'get')
     return res
 }
+
+// scroll
+export function getScroll() {
+    let res = request('/scroll', 'get')
+    return res
+}
