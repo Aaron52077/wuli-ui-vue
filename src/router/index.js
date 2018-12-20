@@ -39,7 +39,7 @@ export const routes = [
 ]
 
 export default new Router({
-    mode: 'history', //后端支持可开
+    // mode: 'history', //后端支持可开
     routes: routes
 })
 
