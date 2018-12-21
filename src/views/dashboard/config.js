@@ -13,6 +13,10 @@ export default {
             {
                 name: 'Tag 标签',
                 path: '/tag'
+            },
+            {
+                name: 'CheckList 复选框',
+                path: '/check'
             }
         ]
     },
@@ -42,7 +46,7 @@ export default {
             },
             {
                 name: 'vue-qart',
-                path: '/qart'
+                path: '/qrcode'
             }
         ]
     }

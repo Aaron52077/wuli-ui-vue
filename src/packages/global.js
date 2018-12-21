@@ -9,7 +9,8 @@ const components = {
     'wp-icon': 'icon',
     'wp-popup': 'popup',
     'wp-tag': 'tag',
-    'wp-switch': 'switch'
+    'wp-switch': 'switch',
+    'wp-checklist': 'checkList'
 };
 
 Object.keys(components).forEach(key => {

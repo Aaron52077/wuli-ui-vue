@@ -40,6 +40,14 @@ export const routes = [
         path: '/scroll',
         component: resolve => require(['@/views/bScroll'], resolve)
     },
+    {
+        path: '/qrcode',
+        component: resolve => require(['@/views/qrCode'], resolve)
+    },
+    {
+        path: '/check',
+        component: resolve => require(['@/views/checkList'], resolve)
+    },
 ]
 
 export default new Router({

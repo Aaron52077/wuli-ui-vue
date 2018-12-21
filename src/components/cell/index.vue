@@ -44,7 +44,7 @@ export default {
         title: String,
         label: String,
         isLink: Boolean,
-        value: String
+        value: [String, Object, Array]
     },
     methods: {
         clickHandle(e) {

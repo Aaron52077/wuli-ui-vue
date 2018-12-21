@@ -21,13 +21,14 @@
                 <div>
                     <div class="wuli-aside__wrapper" v-for="(item, i) in config" :key="i">
                         <div class="wuli-aside__menu">{{item.name}}</div>
-                        <wuli-checklist
+                        <wp-checklist
                             align="right"
                             v-model="checkValue"
+                            type="danger"
                             :options="item.list"
                             :title="item.name"
                             @change="checkHandle">
-                        </wuli-checklist> 
+                        </wp-checklist> 
                     </div> 
                 </div>  
             </div>
@@ -51,7 +52,6 @@
 <script>
 import BScroll from "better-scroll"
 import { getScroll } from '@/api'
-import wuliChecklist from "./checklist"
 
 export default {
     name: "resetChoose",
@@ -125,7 +125,6 @@ export default {
             return 0
         }
     },
-  components: { wuliChecklist },
     watch: {
         checkValue: {
             handler: function(val, oldVal) {
