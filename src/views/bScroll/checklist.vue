@@ -98,19 +98,64 @@ export default {
         font-size: 12px;
         color: #989898;
     }
-    &__checkbox--label {
-        width: 100%;
-    }
-    &__checkbox.is-right {
-        position: absolute;
-        top: 50%;
-        right: 15px;
-        transform: translateY(-50%);
-    }
-    &__checkbox--input:checked {
-        & + .wuli-aside__checkbox--core {
-            background-color: #eb3546;
-            border-color: #eb3546;
+    &__checkbox {
+        &.is-right {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            width: 14px;
+            height: 14px;
+            transform: translateY(-50%);
+        }
+        &--label {
+            width: 100%;
+            cursor: pointer;
+        }
+        &--input {
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            margin: 0;
+            width: 0;
+            height: 0;
+            transform: translateY(-50%);
+            outline: none;
+            z-index: -1;
+            &:checked {
+                & + .wuli-aside__checkbox--core {
+                    background-color: #eb3546;
+                    border-color: #eb3546;
+                    &::after {
+                        transform: rotate(45deg) scaleY(1);
+                    }
+                }
+            }
+        }
+        &--core {
+            display: inline-block;
+            position: relative;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            border: 1px solid #dcdfe6;
+            border-radius: 2px;
+            transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
+            z-index: 1;
+            &::after {
+                content: "";
+                position: absolute;
+                border: 1px solid #fff;
+                border-left: 0;
+                border-top: 0;
+                height: 8px;
+                left: 5px;
+                top: 2px;
+                transform: rotate(45deg) scaleY(0);
+                width: 4px;
+                transition: transform .15s ease-in .05s;
+                transform-origin: center;
+            }
         }
     }
 }

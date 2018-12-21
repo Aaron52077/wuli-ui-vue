@@ -4,7 +4,12 @@ vue-awesome-swiper
 
 > 终端安装使用 `npm i vue-awesome-swiper -S`
 
+## 演示demo
+
+[DEMO](https://aaron52077.github.io/wuli-ui-dev/#/swiper) 
+
 ?> `vue-awesome-swiper` 使用实例
+
 
 ``` vue
 <template>

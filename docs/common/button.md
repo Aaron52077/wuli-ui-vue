@@ -4,6 +4,10 @@
 
 > `<wp-button />` 通用按钮组件
 
+## 演示demo
+
+[DEMO](https://aaron52077.github.io/wuli-ui-dev/#/button) 
+
 ?> `<wp-button />` 使用实例
 ``` vue
 <template>

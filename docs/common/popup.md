@@ -4,6 +4,10 @@
 
 > `<wp-popup />` 通用弹窗组件。
 
+## 演示demo
+
+[DEMO](https://aaron52077.github.io/wuli-ui-dev/#/popup) 
+
 ?> `<wp-popup />` 使用实例
 
 ``` vue

@@ -4,6 +4,10 @@ vue-photo-preview
 
 > 终端安装使用 `npm i vue-photo-preview -S`
 
+## 演示demo
+
+[DEMO](https://aaron52077.github.io/wuli-ui-dev/#/photo) 
+
 ?> `vue-photo-preview` 使用实例
 
 ``` vue

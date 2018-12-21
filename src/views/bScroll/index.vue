@@ -1,43 +1,51 @@
 <template>
-    <div class="wuli-aside">
-        <div class="wuli-aside__menus" ref="menuWrapper">
-            <div class="menu__item" 
-                v-for="(item,index) in config" 
-                :class="tabIndex == index ? 'menu__item-active' : ''" 
-                @click="changeTab(index, $event)" :key="index">
-                <span>{{item.name}}</span>
-                <!-- <span v-if="checkValue[item.type].values.length > 0" class="menu__item--num">{{checkValue[item.type].values.length}}</span> -->
-            </div>
-        </div>
-        <div class="wuli-aside__bd" ref="bodyWrapper">
-            <div>
-                <div class="wuli-aside__wrapper" v-for="(item, i) in config" :key="i">
-                    <div class="wuli-aside__menu">{{item.name}}</div>
-                    <wuli-checklist
-                        align="right"
-                        v-model="checkValue"
-                        :options="item.list"
-                        :title="item.name"
-                        @change="checkHandle">
-                    </wuli-checklist> 
-                </div> 
-            </div>  
-        </div>
-        <div class="wuli-aside__ft">
-            <div class="wuli-aside__ft--lt">
-                <div class="lt-icon">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#wp-component"></use>
-                    </svg>
-                </div>
-                <div class="lt-info">
-                    <div class="lt-info__title">滑动类</div>
-                    <div class="lt-info__desc">楼层导航实例</div>
+    <div class="container">
+        <wp-header title="better-scroll" fixed>
+            <template slot="left">
+                <wp-icon iconClass="back" className="wuli-header__hd" @click.native="$router.go(-1)"></wp-icon>
+            </template>
+            <template slot="right">
+                <wp-icon iconClass="category" className="wuli-header__ft"></wp-icon>
+            </template>
+        </wp-header>
+        <div class="wuli-aside wuli-page">
+            <div class="wuli-aside__menus" ref="menuWrapper">
+                <div class="menu__item" 
+                    v-for="(item,index) in config" 
+                    :class="tabIndex == index ? 'menu__item-active' : ''" 
+                    @click="changeTab(index, $event)" :key="index">
+                    <span>{{item.name}}</span>
                 </div>
             </div>
-            <div class="wuli-aside__ft--rt">确定添加</div>
-        </div>
-    </div>   
+            <div class="wuli-aside__bd" ref="bodyWrapper">
+                <div>
+                    <div class="wuli-aside__wrapper" v-for="(item, i) in config" :key="i">
+                        <div class="wuli-aside__menu">{{item.name}}</div>
+                        <wuli-checklist
+                            align="right"
+                            v-model="checkValue"
+                            :options="item.list"
+                            :title="item.name"
+                            @change="checkHandle">
+                        </wuli-checklist> 
+                    </div> 
+                </div>  
+            </div>
+            <div class="wuli-aside__ft">
+                <div class="wuli-aside__ft--lt">
+                    <div class="lt-icon">
+                        <wp-icon iconClass="component" className="icon"></wp-icon>
+                        <div class="lt-icon__point" v-show="checkValue.length > 0">{{checkValue.length}}</div>
+                    </div>
+                    <div class="lt-info">
+                        <div class="lt-info__title">滑动类</div>
+                        <div class="lt-info__desc">楼层导航实例</div>
+                    </div>
+                </div>
+                <div class="wuli-aside__ft--rt">确定添加</div>
+            </div>
+        </div>   
+    </div>
 </template>
 
 <script>
@@ -97,7 +105,7 @@ export default {
             this.bodyScroll.scrollTo(0, -this.listHeight[this.tabIndex], 300);
         },
         checkHandle(data) {
-            console.log(data)
+            this.checkValue = data
         },
     },
     computed: {
