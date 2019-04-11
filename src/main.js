@@ -6,6 +6,7 @@ import axios from 'axios'
 import router from './router'
 import store from './store'
 
+import dataBase from './global'
 // fonts
 import './assets/fonts'
 // js
@@ -31,5 +32,8 @@ new Vue({
     el: '#app',
     router,
     store,
+    created() {
+        dataBase.init(this)
+    },
     render: h => h(App)
 })
